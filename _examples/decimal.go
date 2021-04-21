@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/robaho/fixed"
+
+	"github.com/WinPooh32/fixed"
 )
 
 func main() {
