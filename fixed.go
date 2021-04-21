@@ -140,6 +140,14 @@ func NewI(i int64, n uint) Fixed {
 	return Fixed{fp: i}
 }
 
+func NewRaw(fp int64) Fixed {
+	return Fixed{fp: fp}
+}
+
+func (f Fixed) Raw() int64 {
+	return f.fp
+}
+
 func (f Fixed) IsNaN() bool {
 	return f.fp == nan
 }
