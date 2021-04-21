@@ -3,9 +3,10 @@ package fixed_test
 import (
 	"bytes"
 	"encoding/json"
-	. "github.com/robaho/fixed"
 	"math"
 	"testing"
+
+	. "github.com/WinPooh32/fixed"
 )
 
 func TestBasic(t *testing.T) {
