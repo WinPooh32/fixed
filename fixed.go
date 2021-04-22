@@ -459,10 +459,10 @@ func (f Fixed) MarshalJSON() ([]byte, error) {
 }
 
 // MarshalTo writes marshalled value to buffer.
-func (f Fixed) MarshalTo(buf []byte) {
+func (f Fixed) MarshalTo(buf []byte) []byte {
 	if f.IsNaN() {
-		copy(buf, []byte("\"NaN\""))
-		return
+		n := copy(buf, []byte("\"NaN\""))
+		return buf[:n]
 	}
-	itoa(buf, f.fp)
+	return itoa(buf, f.fp)
 }
