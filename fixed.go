@@ -457,3 +457,12 @@ func (f Fixed) MarshalJSON() ([]byte, error) {
 	buffer := make([]byte, 24)
 	return itoa(buffer, f.fp), nil
 }
+
+// MarshalTo writes marshalled value to buffer.
+func (f Fixed) MarshalTo(buf []byte) {
+	if f.IsNaN() {
+		copy(buf, []byte("\"NaN\""))
+		return
+	}
+	itoa(buf, f.fp)
+}
